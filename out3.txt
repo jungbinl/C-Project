@@ -1,0 +1,41 @@
+
+Problem 2,3,4,5: 
+Enter matrix element: 2
+Enter matrix element: 2
+Enter matrix element: 1
+Enter matrix element: 0
+Enter matrix element: 1
+Enter matrix element: 3
+Enter matrix element: 4
+Enter matrix element: 10
+Enter matrix element: 13
+
+The matrix 'sum' : 
+6	6	3	
+0	3	9	
+12	30	39	
+
+Problem 6,7: 
+Enter score 1: 10
+Enter score 2: 20
+Enter score 3: 30
+Enter score 4: 20
+Enter score 5: 10
+
+Max score= 30
+Avg score= 18
+
+Problem 8: 
+Enter your first name : Albert
+Enter your last name : Einstein
+User name : AEINSTEIN
+
+Problem 9: 
+Number of lower case characters= 30 
+Upper case sentence : IMAGINATION IS MORE IMPORTANT THAN KNOWLEDGE 
+
+Problem 10: 
+Enter the N-character string which needs to be searched for a pattern: aaabbbcccdddeeefffggg
+Long String value:aaabbbcccdddeeefffggg
+Enter a 3-character pattern to search: eee
+Pattern 'eee' found at locations: 12 13 14

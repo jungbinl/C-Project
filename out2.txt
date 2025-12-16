@@ -1,0 +1,41 @@
+
+Problem 2,3,4,5: 
+Enter matrix element:1
+Enter matrix element:1
+Enter matrix element:1
+Enter matrix element:3
+Enter matrix element:3
+Enter matrix element:3
+Enter matrix element:10
+Enter matrix element:20
+Enter matrix element:30
+
+The matrix 'sum' : 
+3	3	3	
+9	9	9	
+30	60	90	
+
+Problem 6,7: 
+Enter score 1: 11
+Enter score 2: 22
+Enter score 3: 32
+Enter score 4: 10
+Enter score 5: 0
+
+Max score= 32
+Avg score= 15
+
+Problem 8: 
+Enter your first name : Mohammad
+Enter your last name : Farazi
+User name : MFARAZI
+
+Problem 9: 
+Number of lower case characters= 29 
+Upper case sentence : FIND HOW MANY THIS SENTENCE HAS LOWER CASES 
+
+Problem 10: 
+Enter the N-character string which needs to be searched for a pattern: Hippopotomonstrosesquippedaliophobia
+Long String value:Hippopotomonstrosesquippedaliophobia
+Enter a 3-character pattern to search: ose
+Pattern 'ose' found at locations: 15 16 17
