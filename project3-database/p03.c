@@ -1,21 +1,3 @@
-
-
-// Project 5
-
-// Enter your name here
-// Mention which environment you used: VS or gcc
-
-// To begin, you should trace through the given code and understand how it works.
-// Please read the instructions above each required function and follow the directions carefully.
-// If you modify any of the given code, the return types, or the parameters, you risk getting compile error.
-// Yyou are not allowed to modify main ().
-// You can use string library functions.
-
-// ***** WRITE COMMENTS FOR IMPORANT STEPS OF YOUR CODE. *****
-// ***** GIVE MEANINGFUL NAMES TO VARIABLES. *****
-// ***** Before implementing any function, see how it is called in executeAction() *****
-
-
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -190,15 +172,6 @@ void executeAction(char c)
 	}
 }
 
-// Q1: addPatient (10 points)
-// This function is used to insert a new patient in the linked list. You must insert the new patient to the head of linked list 'list'.
-// You need NOT check if the patient already exists in the list because that is taken care by searchPatient() called in executeAction(). Look at how this function is used in executeAction().
-// Don't bother to check how to implement searchPatient() while implementing this function. Simply assume that patient does not exist in the list while implementing this function.
-// NOTE: This function does not add doctors to the patient info. There is another function addDoctor() for that.
-// NOTE: Implement searchPatient() to test addPatient() function because of the way addPatient() is used in executeAction()
-//		 Or you can temporarily comment out searchPatient() in executeAction() to test addPatient()
-// Hint: In this question, no doctors means NULL doctors.
-
 void addPatient(char* patientNameInput, unsigned int roomNumInput)
 {
 	// allocate memory for new patientList node
@@ -215,10 +188,6 @@ void addPatient(char* patientNameInput, unsigned int roomNumInput)
 	list = newNode;
 }
 
-// Q2: searchPatient (10 points)
-// This function searches the 'list' to check if the given patient exists in the list. Search by patient name.
-// If it exists then return that 'patient' node of the list. Notice the return type of this function.
-// If the patient does not exist in the list, then return NULL.
 
 struct patient* searchPatient(char* patientNameInput)
 {
@@ -234,11 +203,6 @@ struct patient* searchPatient(char* patientNameInput)
 	}
 	return NULL;		// edit this line if needed
 }
-
-// Q3: displayList (10 points)
-// This function displays every detail(name, room number, doctors) of each patient.
-// Parse through the linked list 'tempList' passed as parameter and print the patient details one after the other. 
-// See expected output screenshots in homework question file.
 
 void displayList(struct patientList* tempList)
 {
@@ -275,12 +239,6 @@ void displayList(struct patientList* tempList)
 
 }
 
-// Q4: addDoctor (15 points)
-// This function adds doctor's name to a patient node.
-// Parse the list to locate the patient and add the doctor to that patient's 'doctors' linked list. No need to check if the patient name exists on the list. That is done in executeAction().
-// You can assume that the same doctor name does not exist. So no need to check for existing doctor names.
-// You are free to add new doctor to head or tail of 'doctors' list. (Sample solution has doctor added to the tail of 'doctors' list.)
-
 void addDoctor(char* patientNameInput, char* doctorNameInput)
 {
 	struct patientList* tempList = list;
@@ -308,12 +266,6 @@ void addDoctor(char* patientNameInput, char* doctorNameInput)
 	}
 
 }
-
-// Q5: removePatient (15 points)
-// This function removes a patient from the list.
-// Parse the list to locate the patient and delete that 'patient' node.
-// You need not check if the patient exists because that is done in executeAction()
-// NOTE: You need to remove the doctors too, if any.
 
 void removePatient(char* patientNameInput)
 {
@@ -347,13 +299,6 @@ void removePatient(char* patientNameInput)
 	}
 }
 
-// Q6: kthDoctor (10 points)
-// This function returns the name of the kth added doctor of a patient.
-// Parse the list to locate the patient. No need to check if the patient name exists in the list. That is done in executeAction().
-// Then parse the doctor names to return the k-th added doctor.
-// if the length of doctor list less than n, return NULL or an error string, like "No k-th doctor!"
-
-
 char* kthDoctor(char* patientNameInput, int n)
 {
 
@@ -379,15 +324,6 @@ char* kthDoctor(char* patientNameInput, int n)
 	return NULL;	// edit this line if needed
 }
 
-
-// Q7: patientsOnThisFloor (20 points)
-// This function is used to construct a new linked list 'resultList' from the global linked list 'list'.
-// The returned list should contain the patients whose floor number matches with the input parameter 'floorNumber'.
-// Input the room number as a 3-digit number and first digit is the floor number. Eg-room 235 means floor 2.
-// No sorting is required for this list.
-// The list that you return will be printed by displayList() and then cleaned up by the deleteDatabase() function. This is done in case 'b' of executeAction().
-// Note that the returned list will need to contain doctor information too.
-// This function should NOT modify the global linked list 'list'.
 struct patientList* patientsOnThisFloor(unsigned int floorNumber)
 {
 	struct patientList* tempList = list;	// work on a copy of 'list'
@@ -433,9 +369,6 @@ struct patientList* patientsOnThisFloor(unsigned int floorNumber)
 
 	return resultList;	// result list contains the search result
 }
-// Q8: deleteList (10 points)
-// Delete all nodes and linked lists inside the passed argument 'pList'
-// This fucntion is used to delete the linked list before exiting the program.
 
 void deleteList(struct patientList* pList)
 {
@@ -460,3 +393,4 @@ void deleteList(struct patientList* pList)
 	}
 
 }
+
