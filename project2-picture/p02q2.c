@@ -1,8 +1,3 @@
-// CSE 220 Spring 2025
-// Project 4
-
-// Enter your name here
-// Mention which environment you used: VS or gcc
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -22,15 +17,6 @@ unsigned char *fp = 0;			//pointer to navigate through the opened file.
 unsigned char *fileStart = 0;	// pointer to save the start address of the file, in case you need to go back to start of file
 unsigned char fileSize = 0;		// stores the size of file
 
-/*
-Problem 1: loadFile (10 points)
-Implement loadfile() to open the myBMP.bmp file. By default, file name is myBMP.bmp
-Use dynamic memory allocation to store the entire contents of the file and let that memory be pointed by 'fp'.
-Save the start of file in 'fileStart' so that you use it to go to start of file in other functions.
-Print the size of the file by reading the appropriate byte from BITMAPFILEHEADER.
-Hint: After opening the file, read the file size and use it for dynamic memory allocation to read entire file.
-Note: If using VS, the bmp file should be placed in "C:\Users\<username>\Documents\Visual Studio 2017\Projects\Project1\Project1" if using default project location.
-*/
 void loadFile(const char *filename)
 {
 	FILE *fp_file;
@@ -48,13 +34,6 @@ void loadFile(const char *filename)
 	fclose(fp_file);
 }
 
-/*
-Problem 2: displayBmpFile (10 points)
-Display myBMP.bmp file in hex.
-Display neatly the content of myBMP.bmp file as seen in hex editor, as per expected output given in project question file.
-Even after closing the file with fclose(), we have the contents of the file in memory pointed by 'fp' (or 'fileStart' in loadFile()).
-So you don't have to open and read the file again.
-*/
 void displayBmpFile()
 {
 printf("Hex view of loaded bmp file:\n");
@@ -77,13 +56,6 @@ for(int i = 0; i < fileSize; i++){
 printf("\n");
 }
 
-/*
-Problem 3: (15 points)
-Ask the user for a pixel location and store the location in 'row' & 'col'. Change that pixel to white color.
-Valid pixel locations are 0  to 4. Check for valid location and keep asking the user until valid location is entered.
-White color is RGB= (255, 255, 255).
-For instance, if user enters row=2, column=0 then change the pixel (2,0) to white color.
-*/
 void changePixelToWhite()
 {
 	unsigned int row = 0, col = 0;
@@ -107,13 +79,6 @@ void changePixelToWhite()
 	printf("Changed pixel (%d, %d) to white \n", row, col);
 }
 
-/*
-Problem 4: saveNewFile (10 points)
-Open a new file and write that file with the modified .bmp image with the white pixel.
-You should have the file content pointed by 'fileStart'.
-File name is provided as parameter when calling in main()
-Note: If using VS, the bmp file will be saved in "C:\Users\<username>\Documents\Visual Studio 2017\Projects\Project1\Project1" if using default project location.
-*/
 void saveNewFile(const char *fileName)
 {
 	// enter code here
@@ -140,3 +105,4 @@ int main()
 	saveNewFile("myBMP2.bmp");
 	return 0;
 }
+
