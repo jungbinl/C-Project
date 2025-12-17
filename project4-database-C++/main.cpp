@@ -1,25 +1,3 @@
-
-//CSE220 Project 6
-// Name: 
-// Programming environment used: VS or g++
-
-
-// READ BEFORE YOU START:
-// You are given a partially completed program that creates a list of students.
-// Each student has the corresponding information: name, roll number and student type.
-// This information is stored as an object of Student class.
-// The classes Undergrad and Grad are child classes of the Stduent class.
-// When adding a new student, these child classes are used to make the student node of the list.
-
-//
-// To begin, you should trace through the given code and understand how it works.
-// Please read the instructions above each required function and follow the directions carefully.
-// Do not modify given code.
-//
-// You can assume that all input is valid:
-// Valid name:	String containing alphabetical letters
-// Valid roll number: a positive integer
-
 #include <iostream>
 #include <fstream>
 #include <string>
@@ -73,8 +51,6 @@ int main()
 	return 0;
 }
 
-// Ask for details from user for the given selection and perform that action
-// Read the function case by case
 void executeAction(char c)
 {
 	string name_input;
@@ -194,22 +170,9 @@ Student* searchStudent(string name_input)
 	return NULL;						// return NULL if student not found in list
 }
 
-// Q3b: Define Friend Function changeRollNo()  (5 points)
-// Define the function changeRollNo()that is declared in student.h
-// This function sets the new roll number of the student. The student and new roll number is to be passed as function arguments.
-// Use 'd' display option after using 'c' option to verify whether the new roll number is set.
-// You will need to implement addStudent() and displayList() before you test this function.
 void changeRollNo(Student* a, int b) {
 	a -> rollNo = b; // chnage a rollNo to b
 }
-
-
-// Q4: addStudent  (10 points)
-// This function is used to add a new student to the global linked list 'list'. You may add the new student to head or tail of the list. (Sample solution adds to tail)
-// New student can be either undergrad or grad. You will need to use the function argument �type� to determine which constructor to use to create new student node.
-// For example, if the user enters undergrad student, then you need to use Undergrad class and constructor to create new student node and add it to the list.
-// NOTE: In executeAction(), searchStudent() is called before this function. Therefore no need to check here if the student exists in the list.
-//       See how this fucntion is called in case 'a' of executeAction()
 
 void addStudent(string name_input, int rollNo_input, studentType type)
 {
@@ -233,10 +196,6 @@ void addStudent(string name_input, int rollNo_input, studentType type)
 	}
 }
 
-// Q5: displayList	(10 points)
-// This function displays the list of student and their details (roll number, student type)
-// Parse the list and use the class member function to display the student info.
-// See expected output in the question file.
 void displayList()
 {
 	Container *tempList = list;			// work on a copy of 'list'
@@ -256,13 +215,6 @@ void displayList()
 	}
 }
 
-// Q6: removeStudent (10 points)
-// This function removes the student whose name is passed as parameter.
-// Parse the list to locate the student and delete that node without memory leak. 
-// Removing the node will cause the list to break into 2 pieces.
-// You will need to stitch those peices. See the list in this way: ...node1->studentToRemove->node2->...
-// Remove the 'studentToRemove' node and stitch node1 to node2 so that list becomes: ...node1->node2->...
-// Hint: You will need to separately consider the case when the 'studentToRemove node' is at the head of the list
 void removeStudent(string name_input)
 {
 	Container* studentToRemove;
@@ -289,9 +241,6 @@ void removeStudent(string name_input)
 	}
 }
 
-// Q7: deleteList (10 points)
-// This function deletes all the nodes of 'list'.
-// Parse the list and delete the nodes one after another, without memory leak.
 void deleteList()
 {
 	Container* tempList = list;
@@ -303,15 +252,6 @@ void deleteList()
 	}
 	list = nullptr;		// reset head pointer
 }
-
-// Q8: sort() (10 points)
-// This function sorts the list by student name alphabetically.
-// You can create a new list of sorted students. In this case, you must delete the old list(garbage collection).
-// You may look at books and websites for a suitable implementation of sorting and modify it as per the need of this program. 
-// You must cite the book/website that you used.
-// You may add function parameters and edit the declaration & function call of this function as per your implementation.
-
-// Sources : CSE 100 howework7 bubbleSort
 
 void sort(Container **head)
 {
@@ -339,24 +279,6 @@ void sort(Container **head)
 	} while (swapped);
 }
 
-
-// Q6: save  (10 points)
-// Save the linked list of students to a file list.txt using ofstream.
-// You will need to save the number of students in linked list. That will help in load() when reading the file.
-// One format to store is:
-// <no. of students>
-// <Student1 name>
-// <Student1 roll no.>
-// <Student1 type>
-// <Student2 name>
-// <Student2 roll no.>
-// <Student2 type>
-// ...
-
-// You may store the list in another format if you wish. You need to read the file in same way in load().
-// This function is called when exiting the program (end of main() ).
-// Hint: You may want to cast the enum �studentType� to an int before writing it to the file.
-
 void save(string fileName)
 {
 	ofstream outFile(fileName);
@@ -377,14 +299,6 @@ void save(string fileName)
 	}
 	outFile.close();
 }
-
-// Q7: load (7 points)
-// Load the linked list of students from the file using ifstream.
-// You will need to create the linked list in the same order that is was saved to the file in save().
-// First, read the number of students saved in the file.
-// Then, for every student you will need to create a new node depending on student type. You may add the student to head or tail of the list. 
-// Hint: If you casted the enum �studentType� to an int, you will need to cast it back to �studentType� when making the student node.
-// This function is called at the beginning of main().
 
 void load(string fileName)
 {
@@ -408,3 +322,4 @@ void load(string fileName)
 
 	inFile.close();
 }
+
