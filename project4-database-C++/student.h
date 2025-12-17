@@ -21,14 +21,9 @@ public:
 	studentType getstudentType();
 	virtual void displayInfo()
 	{}
-
-	// Q3a: Declare Friend Function changeRollNo()  (2 points)
-	// Declare a friend function named changeRollNo() which has 2 parameters and no return value.
-	// The first parameter is a pointer to Student class, and the second is an integer which is the new roll number.
 	friend void changeRollNo(Student*, int);
-	// Q3b will need you to define this function in main.cpp and 
-	// Q3c will need you to call this function in case 'c' of executeAction() in main.cpp file
 
 };
+
 
 #endif // _STUDENT_H_
